@@ -6,17 +6,17 @@ namespace Task1
     {
         static void Main(string[] args)
         {
-        //    Console.Write("enter a=");
-        //    double a = Double.Parse(Console.ReadLine()),
-        //        b;
-        //    Console.Write("enter b=");
-        //    b = Double.Parse(Console.ReadLine());
-        //    Console.WriteLine($"c={Math.Sqrt(a * a + b * b)}");
+            Console.Write("enter a=");
+            double a = Double.Parse(Console.ReadLine()),
+                b;
+            Console.Write("enter b=");
+            b = Double.Parse(Console.ReadLine());
+            Console.WriteLine($"c={Math.Sqrt(a * a + b * b)}");
 
-        //    Console.Write("enter number=");
-        //    int n = int.Parse(Console.ReadLine());
-        //    int m = (n / 10 >= n % 10) ? n % 10 : n / 10;
-        //    Console.WriteLine(m);
+            Console.Write("enter number=");
+            int n = int.Parse(Console.ReadLine());
+            int m = (n / 10 >= n % 10) ? n % 10 : n / 10;
+            Console.WriteLine(m);
 
             Console.Write("enter y=");
             var y = int.Parse(Console.ReadLine());
