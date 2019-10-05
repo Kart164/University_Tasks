@@ -1,10 +1,4 @@
 #include "MyForm.h"
-#include "Matrix.h"
-#include "Transform.h"
-#include "Figure.h"
-#include <vector>
-#include <fstream>
-#include <sstream>
 using namespace System;
 using namespace System::Windows::Forms;
 [STAThreadAttribute]
