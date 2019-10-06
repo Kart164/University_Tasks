@@ -13,11 +13,11 @@ namespace _5__2_4__10
             Console.Write("enter step:");
             int h = int.Parse(Console.ReadLine());
             int counter = 1;
-            //for(int i = a; i <= b; i += h)
-            //{
-            //    Console.WriteLine($"{FPow(i,counter)} ");
-            //    counter++;
-            //}
+            for (int i = a; i <= b; i += h)
+            {
+                Console.WriteLine($"{FPow(i, counter)} ");
+                counter++;
+            }
 
 
             //int sum = 0;
@@ -30,7 +30,44 @@ namespace _5__2_4__10
             //Console.WriteLine(sum);
 
 
-            int 
+            ////первый вариант для всех чисел
+            //for (int i = a; i <= b-2; i++)
+            //{
+            //    for (int j = i+1; j <= b-1; j++)
+            //    {
+            //        for (int k = j+1; k <= b; k++)
+            //        {
+            //            if (i * i + j * j == k * k)
+            //            {
+            //                Console.WriteLine($"{i} {j} {k}");
+            //            }
+            //        }
+            //    }
+            //}
+
+            //for (int i = a; i < b; i++)//для простых троек
+            //{
+            //    int x=2*i+1,
+            //        y=2*i*(i+1),
+            //        z = 2*i+2*i+1;
+            //    if (x > b || y > b || z > b)
+            //    {
+            //        break;
+            //    }
+            //    Console.WriteLine($"{x} {y} {z}");
+            //}
+
+            counter = 0;
+            while(counter < a/2)
+            {
+                if (FPow(2, counter) > a)
+                {
+                    Console.WriteLine($"2^{counter-1}<={a}<2^{counter}");
+                    break;
+
+                }
+                counter++;
+            }
             Console.ReadKey();
         }
 
