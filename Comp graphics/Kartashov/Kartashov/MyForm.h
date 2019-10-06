@@ -172,13 +172,13 @@ namespace Kartashov {
 			break;
 
 		case Keys::X:
-			T = translate(-Wcx, -Wcy) * T; 
+			T = translate(-Wcx, -Wcy) * T;
 			T = scale(1.1f) * T;
 			T = translate(Wcx, Wcy) * T;
 			break; 
 		case Keys::Z:
 			T = translate(-Wcx, -Wcy) * T;
-			T = scale(0.9f) * T;
+			T = scale(1/1.1f) * T;
 			T = translate(Wcx, Wcy) * T;
 			break;
 
