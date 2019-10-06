@@ -13,11 +13,24 @@ namespace _5__2_4__10
             Console.Write("enter step:");
             int h = int.Parse(Console.ReadLine());
             int counter = 1;
-            for(int i = a; i <= b; i += h)
-            {
-                Console.WriteLine($"{FPow(i,counter)} ");
-                counter++;
-            }
+            //for(int i = a; i <= b; i += h)
+            //{
+            //    Console.WriteLine($"{FPow(i,counter)} ");
+            //    counter++;
+            //}
+
+
+            //int sum = 0;
+            //for (int i = a; i <=b; i+=h)
+            //{
+            //    sum += FPow(i, counter);
+            //    counter++;
+
+            //}
+            //Console.WriteLine(sum);
+
+
+            int 
             Console.ReadKey();
         }
 
