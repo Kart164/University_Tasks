@@ -96,8 +96,6 @@ namespace Kartashov {
 
 		}
 #pragma endregion
-	private: bool keepAspectRatio; //смена соотношения сторон
-	private: bool switchPic; //смена рисунка
 	private: System::Void MyForm_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 		Graphics^ g = e->Graphics;
 
