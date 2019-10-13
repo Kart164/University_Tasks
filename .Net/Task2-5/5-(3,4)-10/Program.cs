@@ -6,17 +6,17 @@ namespace _5__3_4__10
     {
         static void Main(string[] args)
         {
-            int d = 1, x, n;
+            int d = 1, x, n, c;
             Console.Write("enter n=");
             n = int.Parse(Console.ReadLine());
-            Console.Write("ente x=");
+            Console.Write("enter x=");
             x = int.Parse(Console.ReadLine());
             Console.Write(Fun1(x, d, n));
 
 
             Console.Write("enter n=");
-            n = int.Parse(Console.ReadLine());
-            Fun2(n);
+            c = int.Parse(Console.ReadLine());
+            Fun2(c);
 
             Console.ReadKey();
         }

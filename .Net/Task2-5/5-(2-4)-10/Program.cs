@@ -6,6 +6,7 @@ namespace _5__2_4__10
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("для каждого числа x на отрезке [a, b] с шагом h вывести на экран значение x в n-ной степени");
             Console.Write("enter a:");
             int a = int.Parse(Console.ReadLine());
             Console.Write("enter b:");
@@ -19,50 +20,36 @@ namespace _5__2_4__10
                 counter++;
             }
 
+            Console.WriteLine("найти сумму всех чисел x^n, где n – порядковый номер числа x на отрезке[a, b] с шагом h");
+            int sum = 0;
+            counter = 1;
+            for (int i = a; i <= b; i += h)
+            {
+                sum += FPow(i, counter);
+                counter++;
 
-            //int sum = 0;
-            //for (int i = a; i <=b; i+=h)
-            //{
-            //    sum += FPow(i, counter);
-            //    counter++;
-
-            //}
-            //Console.WriteLine(sum);
-
-
-            ////первый вариант для всех чисел
-            //for (int i = a; i <= b-2; i++)
-            //{
-            //    for (int j = i+1; j <= b-1; j++)
-            //    {
-            //        for (int k = j+1; k <= b; k++)
-            //        {
-            //            if (i * i + j * j == k * k)
-            //            {
-            //                Console.WriteLine($"{i} {j} {k}");
-            //            }
-            //        }
-            //    }
-            //}
-
-            //for (int i = a; i < b; i++)//для простых троек
-            //{
-            //    int x=2*i+1,
-            //        y=2*i*(i+1),
-            //        z = 2*i+2*i+1;
-            //    if (x > b || y > b || z > b)
-            //    {
-            //        break;
-            //    }
-            //    Console.WriteLine($"{x} {y} {z}");
-            //}
+            }
+            Console.WriteLine(sum);
+            for (int i = a; i <= b - 2; i++)
+            {
+                for (int j = i + 1; j <= b - 1; j++)
+                {
+                    for (int k = j + 1; k <= b; k++)
+                    {
+                        if (i * i + j * j == k * k)
+                        {
+                            Console.WriteLine($"{i} {j} {k}");
+                        }
+                    }
+                }
+            }
 
             counter = 0;
-            while(counter < a/2)
+            while(counter != a)
             {
                 if (FPow(2, counter) > a)
                 {
-                    Console.WriteLine($"2^{counter-1}<={a}<2^{counter}");
+                    Console.WriteLine("2^{0}<={1}<2^{2}",counter-1,a,counter);
                     break;
 
                 }
