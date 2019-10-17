@@ -1,5 +1,4 @@
 #include "MyForm.h"
-#include "Clip.h"
 #include "Matrix.h"
 #include "Transform.h"
 #include "Figure.h"
@@ -12,6 +11,6 @@ using namespace System::Windows::Forms;
 void Main(array<String^>^ args) {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
-	Kartashov::MyForm form;
+	Ponomareva::MyForm form;
 	Application::Run(% form);
 }
