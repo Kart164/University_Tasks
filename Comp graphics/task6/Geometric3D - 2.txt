@@ -1,0 +1,114 @@
+camera 10 5 5 10 5 0 0 1 0
+screen 90 2 5 40
+#первый рисунок- пирамида
+color 0 0 0
+thickness 2
+
+model 0 0 0 1 0.866 0.8165
+path 5
+0 0 0
+0.5 0.2887 0.8165
+1 0 0
+0.5 0.866 0
+0.5 0.2887 0.8165
+path 3
+0.5 0.866 0
+0 0 0
+1 0 0
+
+# преобразования и размещения по описанию
+pushTransform
+rotate 90 0 0 1
+rotate 90 1 1 0
+translate 2.5 5 0
+figure
+popTransform
+pushTransform
+rotate 90 0 0 1
+rotate 90 1 1 0
+translate 12.5 5 0
+figure
+popTransform
+pushTransform
+scale 0.5
+rotate 90 0 0 1
+rotate 90 1 1 0
+translate 14.5 2.5 0
+figure
+popTransform
+pushTransform
+scale 0.5
+rotate -45 0 0 1
+rotate -45 1 1 0
+translate 2.5 8.5 0
+figure
+popTransform
+pushTransform
+scale 0.5
+rotate 180 0 0 1
+rotate 180 1 1 0
+translate 7.75 9 0
+figure
+popTransform
+pushTransform
+
+#Куб
+color 0 0 0
+thickness 2
+model 0 0 -4 1 1 1 
+path 10
+0 1 0
+1 1 0
+1 1 1
+0 1 1
+0 1 0
+0 0 0
+1 0 0
+1 0 1
+0 0 1
+0 1 1
+path 2
+0 0 0
+0 0 1
+path 2
+1 1 0
+1 0 0
+path 2
+1 1 1
+1 0 1
+
+#преобразования
+pushTransform
+rotate 90 0 0 1
+rotate 90 1 1 0
+translate 2 11 0
+figure
+popTransform
+pushTransform
+rotate 90 0 0 1
+rotate 90 1 1 0
+translate 11.5 11 0
+figure
+popTransform
+pushTransform
+scale 0.5
+rotate -90 0 0 1
+rotate -90 1 1 0
+translate 8.5 4 0
+figure
+popTransform
+pushTransform
+scale 0.5
+rotate 135 0 0 1
+rotate 135 1 1 0
+translate 10 4 0
+figure
+popTransform
+pushTransform
+scale 0.5
+rotate 45 0 0 1
+rotate 45 1 1 0
+translate 15.5 3 0
+figure
+popTransform
+pushTransform

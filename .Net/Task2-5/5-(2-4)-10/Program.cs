@@ -30,28 +30,38 @@ namespace _5__2_4__10
 
             }
             Console.WriteLine(sum);
+            Console.WriteLine("найти числа х,у,z");
+            Console.Write("enter a:");
+            a = int.Parse(Console.ReadLine());
+            Console.Write("enter b:");
+            b = int.Parse(Console.ReadLine());
             for (int i = a; i <= b - 2; i++)
             {
                 for (int j = i + 1; j <= b - 1; j++)
                 {
                     for (int k = j + 1; k <= b; k++)
                     {
-                        if (i * i + j * j == k * k)
+                        if (FPow(i,2) + FPow(j,2) == FPow(k,2))
                         {
                             Console.WriteLine($"{i} {j} {k}");
                         }
                     }
                 }
             }
-
+            Console.WriteLine("окружвющие степени");
             counter = 0;
-            while(counter != a)
+            while(counter <= a)
             {
-                if (FPow(2, counter) > a)
+                if (FPow(2, counter) > a && a>0)
                 {
                     Console.WriteLine("2^{0}<={1}<2^{2}",counter-1,a,counter);
                     break;
 
+                }
+                else if( a <= 0)
+                {
+                    Console.WriteLine("{1}<2^{2}", a, counter);
+                    break;
                 }
                 counter++;
             }

@@ -11,7 +11,7 @@ namespace _5__3_4__10
             n = int.Parse(Console.ReadLine());
             Console.Write("enter x=");
             x = int.Parse(Console.ReadLine());
-            Console.Write(Fun1(x, d, n));
+            Console.WriteLine(Fun1(x, d, n));
 
 
             Console.Write("enter n=");
@@ -28,7 +28,7 @@ namespace _5__3_4__10
             }
             else
             {
-                return (double)x / (d + Fun1(x, d + 1, n));
+                return x / (d + Fun1(x, d + 1, n));
             }
         }
         static void Stroka(int n)

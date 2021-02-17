@@ -1,0 +1,69 @@
+﻿<Window x:Class="DeliveryApp1.AddSmth"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DeliveryApp1"
+        mc:Ignorable="d"
+        Title="AddSmth" Height="450" Width="800">
+    <Grid>
+        <Grid x:Name="Adress" Visibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBox x:Name="Country" HorizontalAlignment="Center" Height="19" Margin="0" TextWrapping="Wrap" Text="Country" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="City" HorizontalAlignment="Center" Height="19" Margin="28,24,29,0" TextWrapping="Wrap" Text="City" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="Street" HorizontalAlignment="Left" Height="19" Margin="28,48,0,0" TextWrapping="Wrap" Text="Street" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="Building" HorizontalAlignment="Left" Height="19" Margin="28,72,0,0" TextWrapping="Wrap" Text="Building" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="Postindex" HorizontalAlignment="Left" Height="19" Margin="28,96,0,0" TextWrapping="Wrap" Text="Postindex" VerticalAlignment="Top" Width="120"/>
+            <Button x:Name="addAdress" Content="add" HorizontalAlignment="Left" Margin="50,120,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.17,-0.633" Click="addAdress_Click"/>
+        </Grid>
+        <Grid x:Name="Cargo" Visibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBox x:Name="cargoComp" HorizontalAlignment="Center" Height="19" Margin="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="Company id"/>
+            <TextBox x:Name="cargoWeight" HorizontalAlignment="Center" Height="19" Margin="0,24,0,0" TextWrapping="Wrap" Text="Weight" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="cargoPack" HorizontalAlignment="Center" Height="19" Margin="46,48,46,0" TextWrapping="Wrap" Text="Id of Packaging" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="cargoHeight" HorizontalAlignment="Center" Height="19" Margin="46,72,46,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="height"/>
+            <TextBox x:Name="cargoWidth" HorizontalAlignment="Center" Height="19" Margin="0,96,0,0" TextWrapping="Wrap" Text="width" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="cargoDepth" HorizontalAlignment="Center" Height="19" Margin="0,120,0,0" TextWrapping="Wrap" Text="Depth" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="cargoStock" HorizontalAlignment="Center" Height="19" Margin="0,144,0,0" TextWrapping="Wrap" Text="Stock id" VerticalAlignment="Top" Width="120"/>
+            <Button x:Name="addCargo" Content="add" HorizontalAlignment="Left" Margin="60,168,0,0" VerticalAlignment="Top" Width="75" Click="addCargo_Click"/>
+        </Grid>
+        <Grid x:Name="Car" Visibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center" Height="214" Margin="258,108,258,97">
+            <TextBox x:Name="carReg" HorizontalAlignment="Center" Height="19" Margin="0" TextWrapping="Wrap" Text="Registration" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="CarMark" HorizontalAlignment="Center" Height="19" Margin="78,24,79,0" TextWrapping="Wrap" Text="Mark" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="carLift" HorizontalAlignment="Center" Height="19" Margin="0,48,0,0" TextWrapping="Wrap" Text="lifting capacity" VerticalAlignment="Top" Width="120"/>
+            <CheckBox x:Name="isFreeCar" Content="Is car Free now?" HorizontalAlignment="Center" Margin="0,72,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="carCCV" HorizontalAlignment="Center" Height="19" Margin="0,92,0,0" TextWrapping="Wrap" Text="compartment volume" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="carHeight" HorizontalAlignment="Center" Height="19" Margin="0,116,0,0" TextWrapping="Wrap" Text="Height" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="carWidth" HorizontalAlignment="Center" Height="19" Margin="0,140,0,0" TextWrapping="Wrap" Text="Width" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="carDepth" HorizontalAlignment="Center" Height="19" Margin="0,164,0,0" TextWrapping="Wrap" Text="depth" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.871,-3.701"/>
+            <Button x:Name="addCar" Content="add" HorizontalAlignment="Center" Margin="78,194,122,0" VerticalAlignment="Top" Width="76" Click="addCar_Click"/>
+        </Grid>
+        <Grid x:Name="Driver" Visibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="222,146,224,145" Width="346">
+            <TextBox x:Name="driverSur" HorizontalAlignment="Center" Height="19" Margin="0" TextWrapping="Wrap" Text="Surname" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="driverName" HorizontalAlignment="Center" Height="19" Margin="113,24,113,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="driverPatr" HorizontalAlignment="Center" Height="23" Margin="110,48,116,0" TextWrapping="Wrap" Text="Patronymic" VerticalAlignment="Top" Width="120"/>
+            <CheckBox x:Name="isFreeDriver" Content="Is Driver free now" HorizontalAlignment="Center" Margin="0,76,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.593,-0.186"/>
+            <Button x:Name="addDriver" Content="Add" HorizontalAlignment="Left" Margin="135,108,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.114,0.318" Click="addDriver_Click"/>
+        </Grid>
+        <Grid x:Name="Client" Visibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBox x:Name="clientName" HorizontalAlignment="Center" Height="19" Margin="0" TextWrapping="Wrap" Text="Company name" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="clientPhone" HorizontalAlignment="Center" Height="19" Margin="0,24,0,0" TextWrapping="Wrap" Text="Phone" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="clientEmail" HorizontalAlignment="Center" Height="19" Margin="0,48,0,0" TextWrapping="Wrap" Text="email" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.86,-5.701"/>
+            <TextBox x:Name="clientAdres" HorizontalAlignment="Center" Height="19" Margin="0,72,0,0" TextWrapping="Wrap" Text="adrees id" VerticalAlignment="Top" Width="120"/>
+            <Button x:Name="addClient" Content="Add" HorizontalAlignment="Center" Margin="0,115,0,0" VerticalAlignment="Top" Width="75" Click="addClient_Click"/>
+        </Grid>
+        <Grid x:Name="upd" Visibility="Hidden">
+            <TextBox x:Name="updCountry" HorizontalAlignment="Left" Height="23" Margin="338,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="updCity" HorizontalAlignment="Left" Height="23" Margin="338,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="updStreet" HorizontalAlignment="Left" Height="23" Margin="338,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="updBuilding" HorizontalAlignment="Left" Height="23" Margin="338,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="updPostindex" HorizontalAlignment="Left" Height="23" Margin="338,221,0,0" TextWrapping="Wrap" Text="&#xD;&#xA;" VerticalAlignment="Top" Width="120"/>
+            <Button x:Name="upd1" Content="update" HorizontalAlignment="Left" Margin="360,249,0,0" VerticalAlignment="Top" Width="75" Click="upd1_Click"/>
+            <TextBox x:Name="updid" HorizontalAlignment="Left" Height="23" Margin="338,81,0,0" TextWrapping="Wrap" Text="id" VerticalAlignment="Top" Width="120"/>
+
+        </Grid>
+        <Grid x:Name="del" Visibility="Hidden">
+            <TextBox x:Name="delid" HorizontalAlignment="Left" Height="23" Margin="215,99,0,0" TextWrapping="Wrap" Text="id" VerticalAlignment="Top" Width="120"/>
+            <Button x:Name="delbttn" Content="Delete" HorizontalAlignment="Left" Margin="241,142,0,0" VerticalAlignment="Top" Width="75" Click="delbttn_Click"/>
+
+        </Grid>
+    </Grid>
+</Window>

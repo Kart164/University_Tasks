@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Task7_
 {
@@ -8,7 +9,7 @@ namespace Task7_
         {
             Console.Write("enter n:");
             int n = int.Parse(Console.ReadLine());
-            var matrix = new int[n,n];
+            var matrix = new int[n, n];
             var rand = new Random();
             for (int i = 0; i < n; i++)
             {
@@ -18,22 +19,22 @@ namespace Task7_
                 }
             }
 
-            
-            
-            ////Поменять местами элементы главной и побочной диагонали
-            //PrintMas(matrix, n,n);
+
+
+            //Console.WriteLine("Поменять местами элементы главной и побочной диагонали");
+            //PrintMas(matrix);
             //int temp;
             //for (int i = 0; i < n; i++)
             //{
             //    temp = matrix[i, i];
-            //    matrix[i, i]= matrix[i, (n-1)-i];
-            //    matrix[i, (n-1) - i] = temp;
+            //    matrix[i, i] = matrix[i, (n - 1) - i];
+            //    matrix[i, (n - 1) - i] = temp;
             //}
             //Console.WriteLine();
-            //PrintMas(matrix, n,n);
+            //PrintMas(matrix);
 
 
-            //Удалить из массива элементы с номера k1 по номер k2
+            //Console.WriteLine("Удалить из массива элементы с номера k1 по номер k2");
             //Console.Write("enter n for t5-5:");
             //n = int.Parse(Console.ReadLine());
             //Console.Write("enter k1:");
@@ -51,7 +52,7 @@ namespace Task7_
             //PrintMas(mas);
 
 
-            //Вставить строку из нулей после всех строк, в которых нет ни одного нуля.
+            Console.WriteLine("Вставить строку из нулей после всех строк, в которых нет ни одного нуля.");
             Console.Write("enter n for t6-5:");
             n = int.Parse(Console.ReadLine());
             var matrix1 = new int[n, n];
@@ -62,65 +63,80 @@ namespace Task7_
                     matrix1[i, j] = int.Parse(Console.ReadLine());
                 }
             }
-            PrintMas(matrix1,n,n);
-            int x = n;
-            bool flag = false;
-            for (int i = 0; i < x; ++i)
+            PrintMas(matrix1);
+            var flag = true;
+            var index = new List<int>();
+            for (int i = 0; i < n; ++i)
             {
                 for (int j = 0; j < n; j++)
                 {
                     if (matrix1[i, j] == 0)
                     {
-                        flag = true;
+                        flag = false;
+                        break;
                     }
+
                 }
                 if (flag)
-                {
-                    matrix1 = Insert0String(matrix1, i, x, n);
-                    x++;
-                    flag = false;
-                    i++;
-                }
+                index.Add(i);
+                flag = true;
             }
+            matrix1 = Insert0String(matrix1,index);
             Console.WriteLine();
-            PrintMas(matrix1, x, n);
+            PrintMas(matrix1);
 
 
 
             Console.ReadKey();
         }
 
-        static void DeleteElements(int[] mas,int k1, int k2)
+        static void DeleteElements(int[] mas, int k1, int k2)
         {
             int incr = k2;
-            for (int i = k1; i < mas.Length-(k2-k1+1); i++)
+            if (k2 < mas.Length)
             {
-                mas[i] = mas[incr + 1];
-                incr++;
+                for (int i = k1; i < mas.Length - (k2 - k1 + 1); i++)
+                {
+                    mas[i] = mas[incr + 1];
+                    incr++;
+                }
+                for (int i = mas.Length - (k2 - k1 + 1); i < mas.Length; i++)
+                {
+                    mas[i] = 0;
+                }
             }
-            for (int i = mas.Length-(k2-k1+1); i < mas.Length; i++)
+            else
             {
-                mas[i] = 0;
+                for (int i = k1; i < mas.Length; i++)
+                {
+                    mas[i] = 0;
+                }
             }
         }
-        static int[,] Insert0String(int[,] mas,int index,int x,int y)
+        static int[,] Insert0String(int[,] mas, List<int> index)
         {
-            var temp = new int[x+1, y];
-            for (int i = 0; i < x; i++)
+            var temp = new int[ mas.GetLength(0)+index.Count, mas.GetLength(1)];
+            int k = 0;
+            for (int i = 0; i < mas.GetLength(0); i++)
             {
-                if (i == index)
+                for (int j = 0; j < mas.GetLength(1); j++)
                 {
-                    for (int k = 0; k < y; k++)
-                    {
-                        temp[i, k] = 0;
-                    }
-                    i++;
-
+                    temp[i, j] = mas[i, j];
                 }
-                else
-                for (int j = 0; j < y; j++)
+            }
+            foreach (var item in index)
+            {
+                for (int i = temp.GetLength(0)-1; i >item+k ; i--)
                 {
-                    temp[i,j]= mas[i,j];
+                    for (int j = 0; j < temp.GetLength(1); j++)
+                    {
+                        temp[i, j] = temp[i - 1, j];
+                    }
+                }
+                k++;
+                for (int i = 0; i < temp.GetLength(1); i++)
+                {
+                    temp[item+k, i] = 0;
                 }
             }
             return temp;
@@ -132,16 +148,17 @@ namespace Task7_
                 Console.Write($"{mas[i]} ");
             }
         }
-        static void PrintMas(int[,] mas, int x,int y)
+        static void PrintMas(int[,] mas)
         {
-            for (int i = 0; i < x; i++)
+            for (int i = 0; i < mas.GetLength(0); i++)
             {
-                for (int j = 0; j < y; j++)
+                for (int j = 0; j < mas.GetLength(1); j++)
                 {
-                    Console.Write($"{mas[i,j]} ");
+                    Console.Write($"{mas[i, j]} ");
                 }
                 Console.WriteLine();
             }
         }
     }
 }
+

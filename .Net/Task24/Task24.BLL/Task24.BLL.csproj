@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Task24.Common\Task24.Common.csproj" />
+    <ProjectReference Include="..\Task24.DAL\Task24.DAL.csproj" />
+  </ItemGroup>
+
+</Project>

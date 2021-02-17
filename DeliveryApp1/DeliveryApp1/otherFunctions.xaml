@@ -1,0 +1,64 @@
+﻿<Window x:Class="DeliveryApp1.otherFunctions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DeliveryApp1"
+        mc:Ignorable="d"
+        Title="otherFunctions" Height="450" Width="800">
+    <Grid>
+        <Grid x:Name="getInfoGrid" Visibility="Hidden">
+            <DataGrid x:Name="DeliveryTable" HorizontalAlignment="Left" Height="161" Margin="10,27,0,0" VerticalAlignment="Top" Width="759" SelectionChanged="DeliveryTable_SelectionChanged"/>
+            <DataGrid x:Name="getInfo" HorizontalAlignment="Left" Height="95" Margin="17,208,0,0" VerticalAlignment="Top" Width="572" SelectionUnit="Cell" SelectionMode="Single"/>
+        </Grid>
+        <Grid x:Name="HardSearch" Visibility="Hidden">
+            <TextBox x:Name="CompName" HorizontalAlignment="Left" Height="23" Margin="323,107,0,0" TextWrapping="Wrap" Text="Company name" VerticalAlignment="Top" Width="120"/>
+            <Button x:Name="search" Content="Search" HorizontalAlignment="Left" Margin="342,135,0,0" VerticalAlignment="Top" Width="75" Click="search_Click"/>
+            <DataGrid x:Name="orders" HorizontalAlignment="Left" Height="234" Margin="10,175,0,0" VerticalAlignment="Top" Width="772"/>
+
+        </Grid>
+        <Grid x:Name="addViewGrid" Visibility="Hidden" >
+            <TextBox x:Name="cvv" HorizontalAlignment="Left" Height="23" Margin="10,94,0,0" TextWrapping="Wrap" Text="cvv" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.496,-0.865"/>
+            <TextBox x:Name="lift" HorizontalAlignment="Left" Height="23" Margin="10,66,0,0" TextWrapping="Wrap" Text="lifting capacity" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="Mark" HorizontalAlignment="Left" Height="23" Margin="10,38,0,0" TextWrapping="Wrap" Text="Mark" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="Reg" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="Registration number" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="height" HorizontalAlignment="Left" Height="23" Margin="10,122,0,0" TextWrapping="Wrap" Text="height" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="width" HorizontalAlignment="Left" Height="23" Margin="10,150,0,0" TextWrapping="Wrap" Text="width" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="depth" HorizontalAlignment="Left" Height="23" Margin="10,178,0,0" TextWrapping="Wrap" Text="depth" VerticalAlignment="Top" Width="120"/>
+            <Button x:Name="addview" Content="add" HorizontalAlignment="Left" Margin="10,206,0,0" VerticalAlignment="Top" Width="75" Click="addview_Click"/>
+            <DataGrid x:Name="view" HorizontalAlignment="Left" Height="367" Margin="178,26,0,0" VerticalAlignment="Top" Width="593"/>
+
+
+        </Grid>
+        <Grid x:Name="rep1" Visibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center" Height="196" Width="196">
+            <TextBox x:Name="dataStart" HorizontalAlignment="Center" Height="23" Margin="10,0" TextWrapping="Wrap" Text="Start Date" VerticalAlignment="Top" Width="176"/>
+            <TextBox x:Name="endDate" HorizontalAlignment="Center" Height="23" Margin="10,28,10,0" TextWrapping="Wrap" Text="End Date" VerticalAlignment="Top" Width="176"/>
+            <TextBox x:Name="acc" HorizontalAlignment="Center" Height="23" Margin="10,56,10,0" TextWrapping="Wrap" Text="Account number" VerticalAlignment="Top" Width="176"/>
+            <Button x:Name="calculate" Content="calculate" HorizontalAlignment="Center" Margin="21,84,24,0" VerticalAlignment="Top" Width="75" Click="calculate_Click"/>
+            <Label Content="Profit is:" HorizontalAlignment="Left" Margin="10,109,0,0" VerticalAlignment="Top" Width="100"/>
+            <TextBlock x:Name="res" HorizontalAlignment="Left" Margin="0,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="21"/>
+
+        </Grid>
+        <Grid x:Name="rep2" Visibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center" Height="196" Width="196">
+            <TextBox x:Name="dataStart1" HorizontalAlignment="Center" Height="23" Margin="10,0" TextWrapping="Wrap" Text="Start Date" VerticalAlignment="Top" Width="176"/>
+            <TextBox x:Name="endDate1" HorizontalAlignment="Center" Height="23" Margin="10,28,10,0" TextWrapping="Wrap" Text="End Date" VerticalAlignment="Top" Width="176"/>
+            <Button x:Name="calculate1" Content="calculate" HorizontalAlignment="Center" Margin="21,84,24,0" VerticalAlignment="Top" Width="75" Click="calculate1_Click"/>
+            <Label Content="Profit is:" HorizontalAlignment="Center" Margin="10,109,0,0" VerticalAlignment="Top" Width="100"/>
+            <TextBlock x:Name="res1" HorizontalAlignment="Center" Margin="0,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="21"/>
+
+        </Grid>
+        <Grid x:Name="rep3" Visibility="Hidden" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="500" Height="200">
+            <TextBox x:Name="companyCount" HorizontalAlignment="Left" Height="23" Margin="181,0,0,0" TextWrapping="Wrap" Text="Company name" VerticalAlignment="Top" Width="120"/>
+            <Button x:Name="calc2" Content="Calculate" HorizontalAlignment="Left" Margin="208,28,0,0" VerticalAlignment="Top" Width="75" Click="calc2_Click"/>
+            <Label Content="Count of orders:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="123,65,0,0"/>
+            <TextBlock x:Name="res2" HorizontalAlignment="Left" Margin="224,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.952,1.208"/>
+
+        </Grid>
+        <Grid x:Name="rep4" Visibility="Hidden" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="500" Height="250">
+            <TextBox x:Name="Order_id" HorizontalAlignment="Left" Height="23" Margin="188,0,0,0" TextWrapping="Wrap" Text="Order id" VerticalAlignment="Top" Width="120"/>
+            <Button x:Name="track" Content="Track" HorizontalAlignment="Left" Margin="214,28,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.043,0.876" Click="track_Click"/>
+            <TextBlock x:Name="res3" HorizontalAlignment="Left" Margin="117,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="114" Width="296"/>
+
+        </Grid>
+    </Grid>
+</Window>
